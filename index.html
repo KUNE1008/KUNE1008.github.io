@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal homepage of Dingkun Wei." />
+  <title>Dingkun Wei</title>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=LXGW+WenKai+TC&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --text: #444;
+      --heading: #333;
+      --muted: #777;
+      --line: #e8e8e8;
+      --link: #1772d0;
+      --link-hover: #e07a5f;
+      --highlight: #fffbe6;
+      --soft: #fafafa;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--text);
+      font-family: "Lato", Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 22px 44px;
+    }
+
+    .intro-table,
+    .paper-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .intro-table td {
+      vertical-align: top;
+    }
+
+    .paper-table td {
+      vertical-align: middle;
+    }
+
+    .intro-text {
+      padding-left: 28px;
+    }
+
+    .name {
+      margin: 0 0 14px;
+      color: var(--heading);
+      font-size: 33px;
+      font-weight: 700;
+      line-height: 1.15;
+      text-align: left;
+    }
+
+    .name-cn {
+      font-family: "LXGW WenKai TC", "Songti SC", "STSong", "SimSun", serif;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    .intro-text p {
+      margin: 0 0 14px;
+      font-size: 16px;
+    }
+
+    .intro-links {
+      margin-top: 8px;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    .intro-links a,
+    .intro-links span {
+      white-space: nowrap;
+    }
+
+    .intro-links a i {
+      margin-right: 6px;
+      width: 16px;
+      text-align: center;
+    }
+
+    .headshot-cell {
+      width: 250px;
+      text-align: center;
+    }
+
+    .headshot {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 0 0;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      background: linear-gradient(135deg, #f5f5f5 0%, #ececec 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #999;
+      font-size: 26px;
+      letter-spacing: 0.06em;
+    }
+
+    .headshot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      color: var(--heading);
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .section p {
+      margin: 0 0 14px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .list li {
+      margin-bottom: 8px;
+    }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 124px 1fr;
+      gap: 0;
+      align-items: stretch;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      box-sizing: border-box;
+      min-height: 110px;
+      overflow: hidden;
+    }
+
+    .experience-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+      height: 100%;
+      padding: 0 20px;
+    }
+
+    .experience-logo {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .experience-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.5;
+      padding: 12px 18px 12px 6px;
+    }
+
+    .experience-title {
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    .experience-meta {
+      color: var(--text);
+      margin-top: 2px;
+    }
+
+    .experience-time {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 2px;
+    }
+
+    .experience-item.dimmed {
+      opacity: 0.72;
+      background: #fcfcfc;
+    }
+
+    .experience-org {
+      color: var(--link);
+    }
+
+    .experience-org:hover {
+      color: var(--link-hover);
+    }
+
+    .paper-row {
+      border-radius: 10px;
+      transition: none;
+    }
+
+    .paper-row td {
+      padding: 26px 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .paper-table .paper-row:last-child td {
+      border-bottom: none;
+    }
+
+    .paper-table {
+      margin-top: 18px;
+    }
+
+    .publications-note {
+      margin-top: 10px;
+      margin-left: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .oral-icon {
+      color: #e07a5f;
+    }
+
+    .oral-text {
+      color: #e07a5f;
+    }
+
+    .paper-media {
+      width: 180px;
+    }
+
+    .paper-media-frame {
+      width: 160px;
+      height: 152px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .paper-thumb {
+      max-width: 160px;
+      max-height: 182px;
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0;
+      border: 1px solid #ddd;
+      background: #fff;
+      transition: none;
+    }
+
+    .papertitle {
+      color: #000;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .authors,
+    .venue,
+    .paper-links,
+    .paper-note {
+      font-size: 15px;
+    }
+
+    .authors,
+    .venue,
+    .paper-links,
+    .paper-note {
+      margin-top: 4px;
+    }
+
+    .paper-note {
+      color: var(--muted);
+    }
+
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      align-items: center;
+    }
+
+    .paper-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--link);
+      line-height: 1;
+      transition: color 0.18s ease;
+    }
+
+    .paper-links a:hover {
+      color: var(--link-hover);
+    }
+
+    .paper-links a i {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95em;
+      line-height: 1;
+    }
+
+    .paper-links a span {
+      position: relative;
+      top: -0.5px;
+    }
+
+    .paper-footnotes {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .paper-footnotes div + div {
+      margin-top: 2px;
+    }
+
+    .me {
+      font-weight: 700;
+      color: #000;
+    }
+
+    .bibtex {
+      display: none;
+      margin-top: 10px;
+      padding: 12px 14px;
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      font-size: 13px;
+      line-height: 1.45;
+      white-space: pre;
+    }
+
+    .footer {
+      margin-top: 32px;
+      width: 100%;
+      background: #f5f5f5;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 18px 22px;
+      text-align: center;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer-note {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px) {
+      .intro-table,
+      .intro-table tbody,
+      .intro-table tr,
+      .intro-table td,
+      .paper-table,
+      .paper-table tbody,
+      .paper-table tr,
+      .paper-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .intro-text {
+        padding-left: 0;
+      }
+
+      .headshot-cell {
+        width: auto;
+        margin-top: 18px;
+      }
+
+      .headshot {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto;
+      }
+
+      .paper-row td {
+        padding: 10px 0;
+        border-bottom: none;
+      }
+
+      .paper-row {
+        display: block;
+        padding: 14px 14px 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .paper-media {
+        width: auto;
+      }
+
+      .paper-media-frame {
+        width: 100%;
+        max-width: 320px;
+        height: 220px;
+      }
+
+      .paper-thumb {
+        max-width: 320px;
+        max-height: 220px;
+      }
+
+      .paper-links {
+        gap: 8px;
+      }
+
+      .publications-note {
+        margin-left: 0;
+      }
+
+      .experience-item {
+        grid-template-columns: 96px 1fr;
+        min-height: auto;
+      }
+
+      .experience-logo {
+        width: 58px;
+        height: 58px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <table class="intro-table">
+      <tr>
+        <td class="headshot-cell">
+          <div class="headshot">
+            <img src="assets/self.png" alt="Dingkun Wei headshot" />
+          </div>
+        </td>
+        <td class="intro-text">
+          <h1 class="name">Dingkun Wei  <span class="name-cn">魏鼎坤</span></h1>
+          <p>
+            I am a second-year CS master's student at <a href="https://www.zju.edu.cn/english/" target="_blank" rel="noopener">Zhejiang University</a>, advised by
+            <a href="https://xzhou.me/" target="_blank" rel="noopener">Prof. Xiaowei Zhou</a>. I obtained my B.Eng. in Software Engineering at the College of Computer Science and Technology, Zhejiang University in 2024.
+          </p>
+          <p>
+            My long-term vision is to develop general-purpose embodied agents that can understand and serve people in the real-world, much like those depicted in  <a href="https://www.quanticdream.com/en/detroit-become-human" target="_blank" rel="noopener">Detroit: Become Human</a>.
+          </p>
+            
+          <p class="intro-links">
+            <a href="mailto:weidingkun@zju.edu.cn"><i class="fa fa-envelope"></i>Email</a>
+            &nbsp;/&nbsp;
+            <a href="https://github.com/kune1008" target="_blank" rel="noopener"><i class="fa fa-github"></i>GitHub</a>
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <div class="section">
+      <h2>Research</h2>
+      <ul class="list">
+        <li>Global Human Mesh Recovery: <a href="#publications">HTD-Refine</a></li>
+        <li>Humanoid Whole Body Control <span style="color: var(--muted);">(current research focus)</span></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Experience</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <div class="experience-icon"><img class="experience-logo" src="assets/Zhejiang_University_Logo.svg" alt="Zhejiang University logo" /></div>
+          <div class="experience-content">
+            <div class="experience-title">Master Student, <a class="experience-org" href="https://www.zju.edu.cn/english/" target="_blank" rel="noopener">Zhejiang University</a></div>
+            <div class="experience-meta">Advised by <a class="experience-org" href="https://xzhou.me/" target="_blank" rel="noopener">Prof. Xiaowei Zhou</a></div>
+            <div class="experience-time">Sep 2024 - Present</div>
+          </div>
+        </div>
+        <div class="experience-item">
+          <div class="experience-icon"><img class="experience-logo" src="assets/ant_group.jpg" alt="Ant Group logo" /></div>
+          <div class="experience-content">
+            <div class="experience-title">Research Intern, <a class="experience-org" href="https://www.antgroup.com/en" target="_blank" rel="noopener">Ant Group</a></div>
+            <div class="experience-meta">Mentored by <a class="experience-org" href="https://zehongs.github.io/" target="_blank" rel="noopener">Zehong Shen</a></div>
+            <div class="experience-time">Sep 2025 - Present</div>
+          </div>
+        </div>
+        <div class="experience-item dimmed">
+          <div class="experience-icon"><img class="experience-logo" src="assets/Zhejiang_University_Logo.svg" alt="Zhejiang University logo" /></div>
+          <div class="experience-content">
+            <div class="experience-title">B.Eng., <a class="experience-org" href="https://www.zju.edu.cn/english/" target="_blank" rel="noopener">Zhejiang University</a></div>
+            <div class="experience-meta">College of Computer Science and Technology</div>
+            <div class="experience-time">Graduated in 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="publications">
+      <h2>Publications</h2>
+      <table class="paper-table">
+        <tr class="paper-row selected">
+          <td class="paper-media">
+            <div class="paper-media-frame">
+              <video class="paper-thumb" autoplay muted loop playsinline preload="metadata" aria-label="HTD-Refine teaser video">
+                <source src="assets/htd-homepage.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </td>
+          <td>
+            <div class="papertitle">
+              <a href="https://kune1008.github.io/htd-refine/" target="_blank" rel="noopener">
+                HTD-Refine: Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos
+              </a>
+            </div>
+            <div class="authors">
+              <span class="me">Dingkun Wei</span><sup>*</sup>,
+              Zehong Shen<sup>*</sup>,
+              Yan Xia,
+              Georgios Pavlakos,
+              Yujun Shen,
+              Xiaowei Zhou
+            </div>
+            <div class="venue">
+              <em>CVPR 2026</em> &nbsp; <i class="fa fa-trophy oral-icon"></i> <span class="oral-text">Oral</span>
+            </div>
+            <div class="paper-links">
+              <a href="https://kune1008.github.io/htd-refine/" target="_blank" rel="noopener"><span>Project Page</span></a>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="publications-note">
+        * Equal contribution
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>
+        &copy; 2026 Dingkun Wei. All Rights Reserved.
+      </p>
+      <p class="footer-note">
+        This website is adapted from
+        <a href="https://jonbarron.github.io/" target="_blank" rel="noopener">this amazing template</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleBib(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = el.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
