@@ -256,12 +256,42 @@
       font-size: 14px;
     }
 
-    .oral-icon {
+    .paper-award {
+      white-space: nowrap;
+    }
+
+    .paper-award + .paper-award {
+      margin-left: 0.45em;
+    }
+
+    .oral-celebrate-icon {
+      display: inline-block;
+      width: 1.05em;
+      height: 1.05em;
+      margin-right: 0.15em;
       color: #e07a5f;
+      vertical-align: -0.12em;
+      line-height: 1;
+    }
+
+    .oral-celebrate-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
     }
 
     .oral-text {
       color: #e07a5f;
+      font-weight: 700;
+    }
+
+    .candidate-award {
+      color: #d4a11d;
+      font-weight: 700;
+    }
+
+    .candidate-award .fa-trophy {
+      margin-right: 0.15em;
     }
 
     .paper-media {
@@ -567,7 +597,20 @@
               Xiaowei Zhou
             </div>
             <div class="venue">
-              <em>CVPR 2026</em> &nbsp; <i class="fa fa-trophy oral-icon"></i> <span class="oral-text">Oral</span>
+              <em>CVPR 2026</em> &nbsp;
+              <span class="paper-award oral-award">
+                <span class="oral-celebrate-icon" aria-hidden="true">
+                  <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                    <path d="M121.6 908.8l537.6-163.2L284.8 368zM438.4 403.2c-9.6 0-16-3.2-22.4-9.6-12.8-12.8-12.8-32 0-44.8 32-32 32-32 0-60.8-12.8-12.8-12.8-32 0-44.8s32-12.8 44.8 0c57.6 57.6 57.6 96 0 153.6-3.2 3.2-12.8 6.4-22.4 6.4zM659.2 624c-9.6 0-16-3.2-22.4-9.6-12.8-12.8-12.8-32 0-44.8l9.6-9.6c28.8-28.8 48-48 73.6-48 28.8 0 48 22.4 80 51.2 12.8 12.8 12.8 32 0 44.8s-32 12.8-44.8 0c-9.6-9.6-25.6-25.6-35.2-32-6.4 3.2-19.2 16-28.8 28.8l-9.6 9.6c-6.4 6.4-12.8 9.6-22.4 9.6z"></path>
+                    <path d="M512 476.8c-9.6 0-16-3.2-22.4-9.6-12.8-12.8-12.8-32 0-44.8l64-64c57.6-57.6 57.6-128 0-185.6l-35.2-35.2c-12.8-12.8-12.8-32 0-44.8s32-12.8 44.8 0L598.4 128c80 80 80 195.2 0 275.2l-64 64c-3.2 6.4-12.8 9.6-22.4 9.6zM588.8 550.4c-9.6 0-16-3.2-22.4-9.6-12.8-12.8-12.8-32 0-44.8l134.4-134.4c102.4-102.4 153.6-64 227.2 9.6 12.8 12.8 12.8 32 0 44.8s-32 12.8-44.8 0c-67.2-67.2-73.6-73.6-137.6-9.6l-134.4 134.4c-6.4 6.4-16 9.6-22.4 9.6z"></path>
+                  </svg>
+                </span>
+                <span class="oral-text">Oral</span>
+              </span>
+              <span class="paper-award candidate-award">
+                <i class="fa fa-trophy" aria-hidden="true"></i>
+                <span>Award Candidate</span>
+              </span>
             </div>
             <div class="paper-links">
               <a href="https://kune1008.github.io/htd-refine/" target="_blank" rel="noopener"><span>Project Page</span></a>
